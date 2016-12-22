@@ -42,8 +42,13 @@ namespace Server
                         builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     }
                     while (handler.Available > 0);
+               
+                    Console.WriteLine(DateTime.Now.ToShortTimeString() +": "+ handler.RemoteEndPoint.ToString()+": " + builder.ToString());
 
-                    Console.WriteLine(DateTime.Now.ToShortTimeString() + ": " + builder.ToString());
+                    //string MYIpClient;
+                    //TcpClient client = client_obj as TcpClient;
+                    //MYIpClient = Convert.ToString(((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address);
+
 
                     // отправляем ответ
                     string message = "ваше сообщение доставлено";
